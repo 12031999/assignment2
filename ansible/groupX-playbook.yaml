@@ -1,0 +1,11 @@
+---
+- name: Configure VMs
+  hosts: all
+  become: yes
+  vars:
+    ansible_user: Ganesh
+  roles:
+    - datadisk
+    - system_profile
+    - users
+    - webserver

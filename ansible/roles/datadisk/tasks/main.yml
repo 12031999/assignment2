@@ -1,0 +1,21 @@
+---
+- name: Partition the data disk
+  parted:
+    device: /dev/sdc
+    number: 1
+    state: present
+    label: gpt
+    part_start: 0%
+    part_end: 40%
+
+- name: Create filesystem on partition 1
+  filesystem:
+    fstype: xfs
+    dev: /dev/sdc1
+
+- name: Mount partition 1
+  mount:
+    path: /part1
+    src: /dev/sdc1
+    fstype: xfs
+    state: mounted
