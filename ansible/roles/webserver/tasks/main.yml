@@ -9,6 +9,7 @@
     content: "{{ inventory_hostname }}"
     dest: "/tmp/{{ inventory_hostname }}.html"
   delegate_to: localhost
+  become: no
 
 - name: Copy the files to respective managed nodes
   copy:
