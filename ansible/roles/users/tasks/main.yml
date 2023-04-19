@@ -8,6 +8,7 @@
   user:
     name: "{{ item }}"
     groups: cloudadmins,wheel
+    password: "$y$j9T$Zss/wrMJ./E3aPPv/GO.K/$hL5SyKVxKIBQKGg5RPKpTQd6NaOVbeRxJ.P.3RJx1e6"
     generate_ssh_key: yes
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
